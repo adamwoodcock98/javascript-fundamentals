@@ -22,3 +22,13 @@ const numbers = [
   '7867867862',
   'aaaaaaaabbbbbbbcccccdddddddd'
 ];
+
+const generateMessages = (names) => {
+  return names.map(addNameToMessage);
+}
+
+const addNameToMessage = (name) => {
+  return `Hi ${name}! 50% off our best candies for you today!`;
+}
+
+const names = ['Anna', 'Laura', 'Josh', 'Min', 'Karla'];
