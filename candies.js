@@ -23,12 +23,20 @@ const numbers = [
   'aaaaaaaabbbbbbbcccccdddddddd'
 ];
 
-const generateMessages = (names) => {
-  return names.map(addNameToMessage);
+const generateMessages = (namesAndDiscounts) => {
+  return namesAndDiscounts.map(item => {
+    const name = item.name;
+    const discount = item.discount;
+    return `Hi ${name}! ${discount}% off our best candies for you today`;
+  });
 }
 
-const addNameToMessage = (name) => {
-  return `Hi ${name}! 50% off our best candies for you today!`;
-}
+const namesAndDiscounts = [
+  { name: 'Anna', discount: 50 },
+  { name: 'Laura', discount: 40 },
+  { name: 'Josh', discount: 30 },
+  { name: 'Min', discount: 50 },
+  { name: 'Karla',discount:  6 }
+];
 
-const names = ['Anna', 'Laura', 'Josh', 'Min', 'Karla'];
+console.log(generateMessages(namesAndDiscounts))
